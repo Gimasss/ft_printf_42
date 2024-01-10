@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmastroc <gmastroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 14:24:38 by gmastroc          #+#    #+#             */
-/*   Updated: 2024/01/08 17:12:59 by gmastroc         ###   ########.fr       */
+/*   Created: 2024/01/09 18:24:36 by gmastroc          #+#    #+#             */
+/*   Updated: 2024/01/10 16:08:54 by gmastroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_putendl_fd(char *s, int fd)
+int	ft_putptr(uintptr_t ptr, int index)
 {
-	return (ft_putstr_fd(s, fd) + ft_putchar_fd('\n', fd));
+	int count;
+
+	count = 0;
+	if (!ptr && !index)
+		count = count + ft_putstr_fd("(nil)", 1);
+	else
+	{
+		count = count + ft_putstr_fd("0x", 1);
+		count = count + ft_putnbr_base(ptr, BASE16);
+	}
+	return (count);
 }
-/* ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd); */

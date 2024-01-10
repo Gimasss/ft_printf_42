@@ -6,7 +6,7 @@
 /*   By: gmastroc <gmastroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 14:23:11 by gmastroc          #+#    #+#             */
-/*   Updated: 2024/01/02 14:15:29 by gmastroc         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:13:44 by gmastroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	return (write(fd, s, ft_strlen(s)));
 }

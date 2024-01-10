@@ -6,11 +6,12 @@
 /*   By: gmastroc <gmastroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 16:34:33 by gmastroc          #+#    #+#             */
-/*   Updated: 2024/01/03 19:48:42 by gmastroc         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:52:35 by gmastroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft/libft.h"
 
 static int	check_format(char c, va_list list)
 {
@@ -21,14 +22,14 @@ static int	check_format(char c, va_list list)
 		count = ft_putchar_fd('%', 1);
 	else if (c == 'c')
 		count = ft_putchar_fd(va_arg(list, int), 1);
-	else if (c == 'i')
+	else if (c == 'i' || c == 'd')
 		count = ft_putnbr_fd(va_arg(list, int), 1);
 	else if (c == 's')
 		count = ft_putstr_fd(va_arg(list, char *), 1);
 	else if (c == 'u')
 		count = ft_putnbr_base(va_arg(list, unsigned int), BASE10);
-	// else if (s == 'p')
-	//     count = ft_putnbr_base(n, base);
+	else if (c == 'p')
+	     count = ft_putptr(va_arg(list, uintptr_t), BASE16);
 	else if (c == 'x')
 		count = ft_putnbr_base(va_arg(list, unsigned int), BASE16);
 	else if (c == 'X')
@@ -56,11 +57,4 @@ int		ft_printf(const char *format, ...)
 	}
 	va_end(arg_list);
 	return (result);
-} 
-int	main()
-{
-	int res;
-
-	res = ft_printf("%d\n", 42);
-	ft_printf("I'm printing %d char\n")
 }

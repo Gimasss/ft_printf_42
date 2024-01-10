@@ -6,7 +6,7 @@
 /*   By: gmastroc <gmastroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 12:47:23 by gmastroc          #+#    #+#             */
-/*   Updated: 2024/01/02 14:16:04 by gmastroc         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:05:41 by gmastroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ descriptor. */
 int	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+	return (1);
 }

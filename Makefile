@@ -6,7 +6,7 @@
 #    By: gmastroc <gmastroc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 15:18:10 by gmastroc          #+#    #+#              #
-#    Updated: 2023/12/29 18:18:19 by gmastroc         ###   ########.fr        #
+#    Updated: 2024/01/04 14:35:10 by gmastroc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,8 @@ LIBFTPATH 	= ./libft
 CFLAGS		= -Wall -Wextra -Werror -g
 LIBCMP		= ar rcs
 RM			= rm -f
-SRC 		= ft_printf.c #print_p.c #\
-	#		print_u.c print_s.c print_i.c print_c.c print_h.c 
-
+SRC 		= ft_printf.c \
+			ft_putnbr_base.c
 
 SRC_OBJ = $(SRC:.c=.o)
 

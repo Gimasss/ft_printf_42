@@ -6,7 +6,7 @@
 /*   By: gmastroc <gmastroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 14:29:01 by gmastroc          #+#    #+#             */
-/*   Updated: 2024/01/02 14:15:38 by gmastroc         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:12:44 by gmastroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,20 @@
 int	ft_putnbr_fd(int n, int fd)
 {
 	long	nl;
+	int		res;
 
+	res = 0;
 	nl = n;
 	if (nl < 0)
 	{
+		res = 1;
 		ft_putchar_fd('-', fd);
 		nl = -nl;
 	}
 	if (nl >= 10)
-		ft_putnbr_fd(nl / 10, fd);
-	ft_putchar_fd(((nl % 10) + '0'), fd);
+		res = res + ft_putnbr_fd(nl / 10, fd);
+	res = res + ft_putchar_fd(((nl % 10) + '0'), fd);
+	return (res);
 }
 
 // #include <fcntl.h>
