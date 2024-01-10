@@ -6,7 +6,7 @@
 /*   By: gmastroc <gmastroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 14:23:11 by gmastroc          #+#    #+#             */
-/*   Updated: 2024/01/08 17:13:44 by gmastroc         ###   ########.fr       */
+/*   Updated: 2024/01/10 19:26:16 by gmastroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return (write(1, "(null)", 6));
 	return (write(fd, s, ft_strlen(s)));
 }

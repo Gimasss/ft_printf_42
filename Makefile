@@ -6,7 +6,7 @@
 #    By: gmastroc <gmastroc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 15:18:10 by gmastroc          #+#    #+#              #
-#    Updated: 2024/01/04 14:35:10 by gmastroc         ###   ########.fr        #
+#    Updated: 2024/01/10 18:06:31 by gmastroc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CFLAGS		= -Wall -Wextra -Werror -g
 LIBCMP		= ar rcs
 RM			= rm -f
 SRC 		= ft_printf.c \
-			ft_putnbr_base.c
+			ft_putnbr_base.c\
+			ft_putptr.c
 
 SRC_OBJ = $(SRC:.c=.o)
 

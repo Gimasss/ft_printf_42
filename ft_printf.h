@@ -6,10 +6,9 @@
 /*   By: gmastroc <gmastroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 19:06:18 by gmastroc          #+#    #+#             */
-/*   Updated: 2024/01/10 15:43:06 by gmastroc         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:24:42 by gmastroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
@@ -25,6 +24,6 @@
 //gestione cspdiuxX%
 int		ft_printf(const char *format, ...);
 int		ft_putnbr_base(unsigned long n, char *base);
-int		ft_putptr(uintptr_t ptr, char *base);
+int		ft_putptr(uintptr_t ptr);
 
 #endif

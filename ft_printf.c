@@ -6,7 +6,7 @@
 /*   By: gmastroc <gmastroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 16:34:33 by gmastroc          #+#    #+#             */
-/*   Updated: 2024/01/10 15:52:35 by gmastroc         ###   ########.fr       */
+/*   Updated: 2024/01/10 19:25:18 by gmastroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	check_format(char c, va_list list)
 	else if (c == 'u')
 		count = ft_putnbr_base(va_arg(list, unsigned int), BASE10);
 	else if (c == 'p')
-	     count = ft_putptr(va_arg(list, uintptr_t), BASE16);
+		count = ft_putptr(va_arg(list, uintptr_t));
 	else if (c == 'x')
 		count = ft_putnbr_base(va_arg(list, unsigned int), BASE16);
 	else if (c == 'X')
@@ -37,14 +37,13 @@ static int	check_format(char c, va_list list)
 	return (count);
 }
 
-int		ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	int	result;
-	int	i;
+	int		result;
+	int		i;
 	va_list	arg_list;
-	
+
 	va_start(arg_list, format);
-	
 	i = 0;
 	result = 0;
 	while (format[i])

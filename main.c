@@ -2,9 +2,11 @@
 
 int	main()
 {
-	//int result = printf("Sentence to know how many %s\n", "characters were written");
-    
-    //printf("%d characters were written", result);
+	int stocazzo;
+	stocazzo = 15;
+	int *ptr;
+	ptr = &stocazzo;
+	
 	ft_printf("Hello %s with a capital %c you're a %u / %i so don't act like a %d, you're even an hex %x or %X, stay at your %p\n",
 				"bitch",
 				'B',
@@ -12,5 +14,7 @@ int	main()
 				10,
 				-500,
 				10,
-				10);
+				10,
+				ptr);
+	ft_printf("NULL %s NULL", NULL);
 }
