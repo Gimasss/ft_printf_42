@@ -23,6 +23,7 @@ ft_printf Because ft_putnbr() and ft_putstr() aren’t enough
 You have to implement the following conversions:
 
 _• %c Prints a single character.
+
 • %s Prints a string (as defined by the common C convention).
 • %p The void * pointer argument has to be printed in hexadecimal format.
 • %d Prints a decimal (base 10) number.
